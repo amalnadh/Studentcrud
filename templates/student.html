@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %} 
+
+<table class="table">
+    <thead class="">
+        <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Reg_No</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Course Name</th>
+            
+
+        </tr>
+
+    </thead>
+    <tbody>
+        {% for student in studentlist %}
+        <tr>
+            <td>{{student.fullname}}</td>
+            <td>{{student.reg_no}}</td>
+            <td>{{student.mobile}}</td>
+            <td>{{student.course_name}}</td>
+
+
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+    {% endblock %}

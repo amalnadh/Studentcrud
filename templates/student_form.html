@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} 
+
+
+{% block content %}
+<p class="lead">Student Registration</p>
+
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.fullname|as_crispy_field}}
+
+        <div class="row">
+            <div class="col-md-6">
+                {{form.reg_no|as_crispy_field}}
+
+                {{form.mobile|as_crispy_field}}
+
+             </div>
+
+             <div class="col-md-6">
+                {{form.email|as_crispy_field}}
+
+                {{form.course_name|as_crispy_field}}
+
+             </div>
+
+
+
+        </div>
+
+        <div class="row"> 
+        
+            <div class="col-md-6">
+                <a href="{% url 'student_list' %}" class="btn btn-primary "><i class="fa-sharp fa-solid fa-arrow-left"></i> Back</a>
+    
+            </div> 
+    
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i>Submit</button>
+    
+            </div> 
+            
+        </div>
+
+</form>
+   
+
+
+    {% endblock %}
